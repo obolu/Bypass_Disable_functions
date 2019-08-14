@@ -40,8 +40,8 @@ RUN mkdir /var/www/html/uploadfiles
 RUN chmod 777 /var/www/html/uploadfiles
 COPY httpd.conf /usr/local/apache/conf/
 #php1.ini open the disable_functions
-#COPY php1.ini /usr/local/php/lib/
+COPY php1.ini /usr/local/php/lib/php.ini
 #php2.ini not open the disable_functions
-COPY php2.ini /usr/local/php/lib/
+#COPY php2.ini /usr/local/php/lib/php.ini
 EXPOSE 80
 CMD ["/usr/local/apache/bin/httpd", "-DFOREGROUND"]
